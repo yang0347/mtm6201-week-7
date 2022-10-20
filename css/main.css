@@ -16,3 +16,9 @@
 .dice5:hover g{
     transform: scale(1.2) rotate(1turn);
 }
+
+.patterntext{
+    font-size: 5.8rem;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
