@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week 7 - SVGs image</title>
+    <link href="css/main.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -21,8 +22,47 @@
 
         <svg class="dice" width="200" height="200" viewBox="0 0 200 200">
           <rect x="0" y="0" width="200" height="200" rx="8" ry="8" fill="#4DD0E1"/>
-          <circle cx="50" cy="50" r="25" fill="#D50000" />
+          <circle cx="50" cy="50" r="25" fill="#D50000"/>
         </svg>
+
+        <!-- reusing the shapes with use tag -->
+        <svg class="dice" width="200" height="200" viewBox="0 0 200 200">
+            <rect x="0" y="0" width="200" height="200" rx="8" ry="8" fill="#4DD0E1"/>
+            <circle id="dot" cx="50" cy="50" r="25" fill="#D50000"/>
+            <use xlink:href="#dot" x="100"/>
+            <use xlink:href="#dot" x="100" y="100"/>
+            <use xlink:href="#dot" y="100"/>
+          </svg>
+
+          <!--defs, use and g -->
+        <svg class="dice5" width="200" height="200" viewBox="0 0 200 200">
+            <defs>
+              <rect id="box" x="0" y="0" width="200" height="200" rx="8" ry="8" fill="#4DD0E1"/>
+              <circle id="point" cx="50" cy="50" r="25" fill="#D50000"/>
+            </defs>
+
+            <use xlink:href="#box" x="0" y="0" />
+            <g>
+                <use xlink:href="#point" x="0" y="0" />
+                <use xlink:href="#point" x="100" y="0" />
+                <use xlink:href="#point" x="100" y="100" />
+                <use xlink:href="#point" x="0" y="100" />
+                <use xlink:href="#point" x="50" y="50" />
+            </g>
+        </svg>
+
+        <!-- gradiient and text -->
+        <svg width="250" height="50" viewBox="0 0 250 50">
+            <defs>
+                <linearGradient id="mygradient">
+                    <stop offset="0%" stop-color="#F57C00" />
+                    <stop offset="60%" stop-color="#F57C00" />
+                    <stop offset="100%" stop-color="#F50000" />
+                </linearGradient>
+            </defs>
+            <text x="0" y="50" fill="url(#mygradient)" font-size="2rem">Colourful</text>
+        </svg>
+
 
     </div>
 </body>
