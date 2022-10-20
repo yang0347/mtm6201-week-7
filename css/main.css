@@ -1,0 +1,9 @@
+.dice circle{
+    fill: white;
+    transform: all .5s;
+    transform-origin: 25px 25px;
+}
+
+.dice:hover circle{
+    transform:scale(1.1);
+}
